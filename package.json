@@ -2,6 +2,7 @@
   "name": "mark-mark",
   "private": true,
   "version": "0.0.0",
+  "description": "a mark",
   "type": "module",
   "scripts": {
     "dev": "vite",

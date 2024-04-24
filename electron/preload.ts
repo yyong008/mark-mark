@@ -1,4 +1,5 @@
 import { ipcRenderer, contextBridge } from 'electron'
+import { marked } from 'marked'
 
 // --------- Expose some API to the Renderer process ---------
 contextBridge.exposeInMainWorld('ipcRenderer', {
@@ -19,6 +20,5 @@ contextBridge.exposeInMainWorld('ipcRenderer', {
     return ipcRenderer.invoke(channel, ...omit)
   },
 
-  // You can expose other APTs you need here.
-  // ...
+  renderMarkdown: (markdownText: string) => marked(markdownText)
 })
